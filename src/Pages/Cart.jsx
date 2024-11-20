@@ -1,13 +1,13 @@
 import React from 'react'
 
-const AddRecipe = () => {
+const Cart = () => {
   return (
     <div>
           <h1>
-              Add Recipe Page
+              Cart Page
       </h1>
     </div>
   )
 }
 
-export default AddRecipe
+export default Cart
