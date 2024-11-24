@@ -1,0 +1,83 @@
+.HomeContainer{
+    display: flex;
+    justify-content: space-around;
+}
+
+.FilterContainer{
+    margin-top: auto;
+    border-style: solid;
+    border-radius: 10px;
+    padding: 10px;
+    margin-bottom: auto; 
+    
+}
+.FilterForm{
+    display:flex;
+    flex-direction: column;
+}
+
+.ProductCard{
+    border-style: solid;
+    border-radius: 5px;
+    border-width: 2px;
+    width: 200px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+
+.ProductCard img{
+    padding: 10px;
+    width: 100px; 
+    height: 100px;
+    border-radius: 10px;
+}
+
+
+.ProductCard button{
+    cursor: pointer;
+    color: white;
+    background-color: black;
+}
+.ProductListContainer{
+    margin-top: px;
+    border-style: solid;
+    padding :20px;
+    display: grid;
+    grid-template-columns:repeat(2, 1fr);
+    gap: 20px;
+    overflow-y: scroll;
+    max-height: 400px;
+    border-radius: 10px;
+}
+
+.ProductDetail{
+    display: flex;
+    flex-direction: column;
+    border-style: solid;
+    width: 300px;
+    justify-content: center;
+    align-items: center;
+}
+
+.ProductDetail img{
+    max-width: 200px;
+    border-radius: 10px;
+    padding: 10px;
+
+}
+
+.ProductDetail p{
+    color: #524b4b;
+    padding: 10px
+}
+
+.ProductDetail button{
+    width: 100px; 
+    height: 50px; 
+    margin-bottom: 10px;
+}
+.ProductDetail h2{
+    padding: 10px;
+}

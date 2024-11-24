@@ -1,12 +1,10 @@
 import { useState } from "react";
-import "./CSS/App.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Header from "./components/Header"
 import Home from "./Pages/Home"
-import Cart from "./Pages/Cart"
 import Login from "./Pages/Login"
-import Register from "./Pages/Register"
 import Profile from "./Pages/Profile"
+import "./CSS/index.css"
 
 
 
@@ -14,11 +12,10 @@ function App() {
   return (
     <>
       <Header />
+      <h1>The Phone Booth</h1>
       <Routes>
-      <Route path="/" element={<Home />} />
-        <Route path="/Cart" element={<Cart />} />
+        <Route path="/" element={<Home />} />
         <Route path="/Login" element={<Login />} />
-        <Route path="/Register" element={<Register />} />
         <Route path="/Profile" element={<Profile />} />
       </Routes>
       </>
