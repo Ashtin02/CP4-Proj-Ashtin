@@ -1,11 +1,12 @@
 import React from 'react'
+import LoginC from "../components/Login"
+import "../CSS/Home.css"
 
 const Login = () => {
   return (
     <div>
-          <h1>
-              Login Page
-      </h1>
+      <LoginC />
+
     </div>
   )
 }

@@ -8,12 +8,13 @@
     border-style: solid;
     border-radius: 10px;
     padding: 10px;
-    margin-bottom: auto; 
+    margin-bottom: 400px; 
     
 }
 .FilterForm{
     display:flex;
     flex-direction: column;
+    margin: 25px
 }
 
 .ProductCard{
@@ -24,6 +25,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    
 
 }
 
@@ -59,6 +61,7 @@
     width: 300px;
     justify-content: center;
     align-items: center;
+    height: 750px;
 }
 
 .ProductDetail img{
@@ -81,3 +84,17 @@
 .ProductDetail h2{
     padding: 10px;
 }
+
+.Login{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.Login button{
+    height: 200px;
+    width: 400px;
+    font-size: 20px;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    background-color: rgb(67, 213, 67);
+    box-shadow: 0 5px 5px rgba(0,0,0,0.1);}
