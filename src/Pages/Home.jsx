@@ -8,7 +8,7 @@ import { getDatabase, ref, onValue, set } from "firebase/database";
 import { database } from "../firebase";
 import AddProductForm from "../components/AddProductForm"
 
-
+//Home page holding most of the logic and the components
 const Home = () => {
 
   const [selectedFilter, setFilter] = useState("All");
@@ -16,11 +16,11 @@ const Home = () => {
   const [selectedProduct, setSelectedProduct] = useState({});
 
 
-  
   useEffect(() => {
     loadProducts();
   }, [])
 
+  //Sets product state as sample products and then loads the sample products into the firebase real time database
   const loadProducts = () => {
     setProducts(SampleProducts)
 
@@ -34,10 +34,16 @@ const Home = () => {
   //Filters the products using ternary operator
   const filteredProducts = selectedFilter === 'All' ? Object.values(products) : Object.values(products).filter((product) => product.Category === selectedFilter);
   
+  //handles the click for view More in product cards 
   const handleClick = (product) => {
     setSelectedProduct(product);
   }
 
+  /**
+   * Adds the given product to the list of products and real time database
+   * Can also edit existing products by inputting the name since that is the key
+   * @param {Object} product 
+   */
   const addProduct = (product) => {
     const newProducts = { ...products };
     newProducts[product.name] = product;
@@ -49,6 +55,10 @@ const Home = () => {
       .catch((error) => console.error('Error when adding product:',error))
   }
 
+  /**
+   * Removes the product from both the internal product list and the real time database
+   * @param {product Name} key 
+   */
   const removeProduct = (key) => {
     const updatedProducts = { ...products };
     delete updatedProducts[key];

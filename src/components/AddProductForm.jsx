@@ -2,7 +2,7 @@ import React, {useRef} from 'react'
 import Products from "../AllProducts"
 import "../CSS/Home.css"
 
-
+//Component to hold a Form that will make a new product
 const AddProductForm = ({ addProduct }) => {
     const nameRef = useRef();
     const priceRef = useRef();

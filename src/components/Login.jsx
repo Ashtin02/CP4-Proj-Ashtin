@@ -3,6 +3,7 @@ import React from 'react'
 import "../CSS/Home.css"
 import { firebaseApp } from '../firebase'
 
+//component that holds the github pop up sign in used in login page
 const LoginC = () => {
 
     const auth = getAuth(firebaseApp)

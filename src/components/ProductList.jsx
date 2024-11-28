@@ -2,6 +2,7 @@ import React from 'react';
 import Card from "./Card"
 import "../CSS/Home.css"
 
+//Component that holds all the product cards and maps themout with the name as the key
 const ProductList = ({ products,onClick, remove }) => {
   if (products.length > 0) {
     return (

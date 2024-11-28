@@ -1,6 +1,7 @@
 import React from 'react'
 import "../CSS/Home.css"
 
+//Template for the product cards on the home page
 const Card = ({ product, onClick, remove }) => {
   return (
     <div className="ProductCard">

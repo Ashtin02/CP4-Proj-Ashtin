@@ -1,6 +1,7 @@
 import React from 'react'
 import "../CSS/Home.css"
 
+//Component that holds the filter content
 const Filter = ({ onFilterChange }) => {
     
     const handleChange = (event) => {

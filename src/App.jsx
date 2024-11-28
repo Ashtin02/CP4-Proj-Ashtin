@@ -6,15 +6,15 @@ import Login from "./Pages/Login"
 import "./CSS/index.css"
 
 
-
+//Has the Header for both pages and routes between home and login page
 function App() {
   return (
     <>
       <Header />
       <h1>The Phone Booth</h1>
       <Routes>
-        <Route path="/Home" element={<Home />} />
         <Route path="/" element={<Login />} />
+        <Route path="/Home" element={<Home />} />
       </Routes>
       </>
   )
