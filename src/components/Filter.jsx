@@ -13,8 +13,8 @@ const Filter = ({ onFilterChange }) => {
           </h1>
 
           <form className="FilterForm">
-              <label><input name="filter"  value="All" type="radio" onChange={handleChange} / >All</label>
-              <label><input name="filter" value="Phone"type="radio" onChange={handleChange} / >Phones</label>
+              <label><input name="filter" value="All"       type="radio" onChange={handleChange} / >All</label>
+              <label><input name="filter" value="Phone"     type="radio" onChange={handleChange} / >Phones</label>
               <label><input name="filter" value="Accessory" type="radio" onChange={handleChange} / >Accessories</label>
           </form>
     </div>

@@ -13,8 +13,8 @@ function App() {
       <Header />
       <h1>The Phone Booth</h1>
       <Routes>
-        <Route path="/Login" element={<Login />} />
-        <Route path="/" element={<Home />} />
+        <Route path="/Home" element={<Home />} />
+        <Route path="/" element={<Login />} />
       </Routes>
       </>
   )

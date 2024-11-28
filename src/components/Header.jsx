@@ -7,8 +7,8 @@ const Header = () => {
     <header className="header">
       <nav>
         <ul>
-          <li><Link to="/">Home</Link></li>
-          <li><Link to="/Login" >Login</Link></li>
+          <li><Link to="/">Login</Link></li>
+          <li><Link to="/Home" >Shop</Link></li>
         </ul>
       </nav>
     </header>
