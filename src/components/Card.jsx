@@ -1,5 +1,6 @@
 import React from 'react'
 import "../CSS/Home.css"
+import PropTypes from 'prop-types'
 
 //Template for the product cards on the home page
 const Card = ({ product, onClick, remove }) => {
@@ -14,4 +15,9 @@ const Card = ({ product, onClick, remove }) => {
   )
 }
 
+Card.propTypes = {
+  product: PropTypes.object.isRequired, 
+  onClick: PropTypes.func.isRequired,
+  remove: PropTypes.func.isRequired,
+}
 export default Card

@@ -4,6 +4,7 @@ import "../CSS/Header.css"
 
 //Component that makes up the Header for both the home and login page
 const Header = () => {
+
   return (
     <header className="header">
       <nav>

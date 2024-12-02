@@ -1,5 +1,6 @@
 import React from 'react'
 import "../CSS/Home.css"
+import PropTypes from 'prop-types';
 
 //Component that holds the filter content
 const Filter = ({ onFilterChange }) => {
@@ -20,6 +21,10 @@ const Filter = ({ onFilterChange }) => {
           </form>
     </div>
   )
+}
+
+Filter.propTypes = {
+  onFilterChange: PropTypes.func.isRequired,
 }
 
 export default Filter

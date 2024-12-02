@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import "../CSS/Home.css"
+import PropTypes from 'prop-types';
 
 //Component that holds the details of each product dependant on which is selected 
 //And Logic for confirmation of purchase
@@ -47,6 +48,10 @@ const ProductDetails = ({ product }) => {
       </div>
     )
   }
+}
+
+ProductDetails.propTypes = {
+  product: PropTypes.object.isRequired,
 }
 
 export default ProductDetails;

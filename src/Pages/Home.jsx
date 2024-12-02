@@ -4,7 +4,7 @@ import Filter from "../components/Filter"
 import ProductList from "../components/ProductList"
 import ProductDetails from "../components/ProductDetails"
 import SampleProducts from "../AllProducts"
-import { getDatabase, ref, onValue, set } from "firebase/database";
+import { ref, set } from "firebase/database";
 import { database } from "../firebase";
 import AddProductForm from "../components/AddProductForm"
 
@@ -16,6 +16,9 @@ const Home = () => {
   const [selectedProduct, setSelectedProduct] = useState({});
 
 
+
+
+//Loads product on the page load.
   useEffect(() => {
     loadProducts();
   }, [])
@@ -71,6 +74,13 @@ const Home = () => {
 
   }
 
+  if (!localStorage.getItem("uid")) {
+    return (
+      <div className="Login">
+        <p>Please login before acccessing The Phone Booth.</p>
+      </div>
+    )
+  }
   return (
     <div className="HomeContainer">
 

@@ -1,6 +1,7 @@
 import React from 'react';
 import Card from "./Card"
 import "../CSS/Home.css"
+import PropTypes from 'prop-types';
 
 //Component that holds all the product cards and maps themout with the name as the key
 const ProductList = ({ products,onClick, remove }) => {
@@ -18,5 +19,11 @@ const ProductList = ({ products,onClick, remove }) => {
     )
   }
 };
+
+ProductList.propTypes = {
+  products: PropTypes.array, 
+  onClick: PropTypes.func, 
+  remove: PropTypes.func
+}
 
 export default ProductList;
