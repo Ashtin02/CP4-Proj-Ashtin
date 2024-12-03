@@ -1,5 +1,6 @@
 import React, { useState, useEffect} from 'react'
 import "../CSS/Home.css"
+import "../CSS/Header.css"
 import Filter from "../components/Filter"
 import ProductList from "../components/ProductList"
 import ProductDetails from "../components/ProductDetails"

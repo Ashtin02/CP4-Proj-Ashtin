@@ -1,6 +1,5 @@
 import React, {useRef} from 'react'
 import Products from "../AllProducts"
-import "../CSS/Home.css"
 import PropTypes from 'prop-types'
 
 //Component to hold a Form that will make a new product

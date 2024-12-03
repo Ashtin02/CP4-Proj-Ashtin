@@ -1,5 +1,4 @@
 import React from 'react'
-import "../CSS/Home.css"
 import PropTypes from 'prop-types'
 
 //Template for the product cards on the home page

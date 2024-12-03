@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import "../CSS/Home.css"
+
 import PropTypes from 'prop-types';
 
 //Component that holds the details of each product dependant on which is selected 
@@ -40,7 +40,7 @@ const ProductDetails = ({ product }) => {
   } else {
     return (
       <div className="ProductDetail">
-        <img src={product.image} alt="product Image" />
+        <img src={product.image} alt="Image coming soon" />
         <h2>{product.name}</h2>
         <p>{product.Desc}</p>
         <p>${product.Price}</p>

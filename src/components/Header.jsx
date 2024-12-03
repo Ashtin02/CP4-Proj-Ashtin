@@ -1,6 +1,5 @@
 import React from "react";
 import { Link } from "react-router-dom"
-import "../CSS/Header.css"
 
 //Component that makes up the Header for both the home and login page
 const Header = () => {

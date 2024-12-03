@@ -1,6 +1,5 @@
 import React from 'react';
 import Card from "./Card"
-import "../CSS/Home.css"
 import PropTypes from 'prop-types';
 
 //Component that holds all the product cards and maps themout with the name as the key

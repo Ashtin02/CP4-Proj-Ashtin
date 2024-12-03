@@ -1,6 +1,5 @@
 import { GithubAuthProvider, getAuth, onAuthStateChanged, signInWithPopup, signOut } from 'firebase/auth'
 import React, { useEffect, useState } from 'react'
-import "../CSS/Home.css"
 import { database, firebaseApp } from '../firebase'
 import { ref, set, get } from 'firebase/database';
 

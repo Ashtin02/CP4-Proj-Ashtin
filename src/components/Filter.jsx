@@ -1,5 +1,4 @@
 import React from 'react'
-import "../CSS/Home.css"
 import PropTypes from 'prop-types';
 
 //Component that holds the filter content
