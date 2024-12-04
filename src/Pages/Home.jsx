@@ -23,7 +23,7 @@ const Home = () => {
     loadProducts();
   }, [])
 
-  //Sets product state as sample products and then loads the sample products into the firebase real time database
+  //Sets product state as the updated products, including the current owner, then loads that data into the realtime database from firebase.
   const loadProducts = async () => {
 
     const productRef = ref(database, 'products');
@@ -35,6 +35,7 @@ const Home = () => {
       ...SampleProducts
     }
 
+    //sample products + owner from login page or any products the user may have added while using website
     setProducts(updateProducts)
 
     set(productRef, updateProducts)
@@ -93,7 +94,7 @@ const Home = () => {
     )
   }
 
-  
+  //If user is logged in the normal home page is shown.
   return (
     <div className="HomeContainer">
 

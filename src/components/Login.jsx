@@ -12,6 +12,7 @@ const LoginC = () => {
     const auth = getAuth(firebaseApp)
 
 
+    //Checks the authentication on a page refresh 
     useEffect(() => {
         const unsubscribe = onAuthStateChanged(auth, (user) => {
             if (user) {
@@ -22,6 +23,7 @@ const LoginC = () => {
     }, []);
 
 
+    //Checks for an uid in local storage and authorizes it (if exists)
     useEffect(() => {
         const storedUid = localStorage.getItem("uid");
         if (storedUid) {
@@ -49,20 +51,25 @@ const LoginC = () => {
 
     //Handles authorization by making the user that signed in the owner of the products in the real time database
     const authHandler = async (data) => {
+        //gets the product portion of the database
         const productRef = ref(database, "products");
         const snapShot = await get(productRef)
         const products = snapShot.val() || {};
 
+        //if it does not have an owner then you are now its owner
         if (!products.owner) {
             await set(ref(database, "products/owner"), data.user.uid)
         }
         
+        //saves owner uid in local storage
         localStorage.setItem("uid", data.user.uid);
 
+        //sets the state of both uid and owner 
         setUid(data.user.uid);
         setOwner(products.owner || data.user.uid);
     }
 
+    //method for the sign in with the use of a popup
     const authenticate = () => {
         let provider = new GithubAuthProvider();
         signInWithPopup(auth, provider)
