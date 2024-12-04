@@ -10,6 +10,7 @@ const AddProductForm = ({ addProduct }) => {
     const descRef = useRef();
     const imageRef = useRef();
 
+  //creates a product from the information that the user fills out in the webpage
     const createProduct = (event) => {
         event.preventDefault();
 

@@ -3,10 +3,12 @@ import PropTypes from 'prop-types';
 
 //Component that holds the filter content
 const Filter = ({ onFilterChange }) => {
-    
+
+    //handles the change of the selected filter
     const handleChange = (event) => {
         onFilterChange(event.target.value);
     }
+  
   return (
     <div className="FilterContainer">
           <h1>

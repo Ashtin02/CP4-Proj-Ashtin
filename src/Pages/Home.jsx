@@ -75,6 +75,8 @@ const Home = () => {
 
   }
 
+  //Checks if local storage has a uid (someone is currently logged in) if not prompt them 
+  //To login before accessing the site.
   if (!localStorage.getItem("uid")) {
     return (
       <div className="Login">
@@ -82,6 +84,8 @@ const Home = () => {
       </div>
     )
   }
+
+  
   return (
     <div className="HomeContainer">
 

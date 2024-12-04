@@ -11,6 +11,7 @@ const LoginC = () => {
 
     const auth = getAuth(firebaseApp)
 
+
     useEffect(() => {
         const unsubscribe = onAuthStateChanged(auth, (user) => {
             if (user) {
@@ -19,6 +20,7 @@ const LoginC = () => {
         })
         return () => unsubscribe();
     }, []);
+
 
     useEffect(() => {
         const storedUid = localStorage.getItem("uid");
@@ -34,6 +36,8 @@ const LoginC = () => {
         return () => unsubscribe();
     }, [])
 
+
+    //handles logging out which signs out the authorized user and removes the uid from local storage
     const logout = async () => {
         console.log("Logging Out");
         await signOut(auth);
@@ -42,6 +46,7 @@ const LoginC = () => {
     }
 
 
+    //Handles authorization by making the user that signed in the owner of the products in the real time database
     const authHandler = async (data) => {
         const productRef = ref(database, "products");
         const snapShot = await get(productRef)
@@ -63,6 +68,7 @@ const LoginC = () => {
             .catch((error) => console.error("Error during Authentication: ", error));
     }
     
+    //if uid is null, then no-one is logged in and they are prompted to login 
     if (!uid) { 
     return (
         <div className="Login">
@@ -77,6 +83,7 @@ const LoginC = () => {
         )
     }
 
+    //if the uid does not match the owner then you are denied access
     if (uid !== owner) {
         return (
             <div className="Login">
@@ -86,6 +93,7 @@ const LoginC = () => {
         )
     }
 
+    //if you are signed in and are the owner then you are welcomed to the site
     return (
         <div className="Login">
             <p>Welcome to The Phone Booth!</p>

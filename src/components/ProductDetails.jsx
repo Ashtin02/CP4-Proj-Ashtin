@@ -9,20 +9,23 @@ const ProductDetails = ({ product }) => {
   const [confirmation, setConfirmation] = useState(false)
 
 
+  // handles the click of the Buy now button
   const handleClick = () => {
     setConfirmation(true);
   }
 
+  //handles the click of the confirm button
   const confirmClick = () => {
     alert("Purchase successful, pick up will be ready at The Phone Booth in 2 hours!")
     setConfirmation(false)
   }
 
+  //Handles the click of the cancel button
   const cancelClick = () => {
     setConfirmation(false);
   }
 
-//If confirmation is true reload component with buttons to ocnfirm 
+//If confirmation is true reload component with buttons to confirm purchase or cancel
   if (confirmation) {
     return (
       <div className="ProductDetail">
