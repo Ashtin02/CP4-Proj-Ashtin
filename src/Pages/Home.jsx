@@ -25,7 +25,6 @@ const Home = () => {
 
   //Sets product state as sample products and then loads the sample products into the firebase real time database
   const loadProducts = async () => {
-    setProducts(SampleProducts)
 
     const productRef = ref(database, 'products');
     const snapShot = await get(productRef);
@@ -35,14 +34,17 @@ const Home = () => {
       ...productsWithOwnwer, 
       ...SampleProducts
     }
+
+    setProducts(updateProducts)
+
     set(productRef, updateProducts)
       .then(() => console.log("Products loaded to firebase"))
       .catch((error) =>
       console.error("Error inserting Products into firebase."))
   }
 
-  //Filters the products using ternary operator
-  const filteredProducts = selectedFilter === 'All' ? Object.values(products) : Object.values(products).filter((product) => product.Category === selectedFilter);
+  //Filters the products using ternary operator 
+  const filteredProducts = selectedFilter === 'All' ? Object.values(products).filter(product => product.name) : Object.values(products).filter((product) => product.Category === selectedFilter);
   
   //handles the click for view More in product cards 
   const handleClick = (product) => {
