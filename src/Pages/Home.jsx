@@ -5,9 +5,10 @@ import Filter from "../components/Filter"
 import ProductList from "../components/ProductList"
 import ProductDetails from "../components/ProductDetails"
 import SampleProducts from "../AllProducts"
-import { ref, set } from "firebase/database";
+import { ref, set, get } from "firebase/database";
 import { database } from "../firebase";
 import AddProductForm from "../components/AddProductForm"
+
 
 //Home page holding most of the logic and the components
 const Home = () => {
@@ -17,19 +18,24 @@ const Home = () => {
   const [selectedProduct, setSelectedProduct] = useState({});
 
 
-
-
 //Loads product on the page load.
   useEffect(() => {
     loadProducts();
   }, [])
 
   //Sets product state as sample products and then loads the sample products into the firebase real time database
-  const loadProducts = () => {
+  const loadProducts = async () => {
     setProducts(SampleProducts)
 
     const productRef = ref(database, 'products');
-    set(productRef, SampleProducts)
+    const snapShot = await get(productRef);
+    const productsWithOwnwer = snapShot.val() || {}
+
+    const updateProducts = {
+      ...productsWithOwnwer, 
+      ...SampleProducts
+    }
+    set(productRef, updateProducts)
       .then(() => console.log("Products loaded to firebase"))
       .catch((error) =>
       console.error("Error inserting Products into firebase."))

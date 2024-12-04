@@ -43,6 +43,7 @@ const LoginC = () => {
         await signOut(auth);
         localStorage.removeItem("uid");
         setUid(null);
+        await set(ref(database, "products/owner"), null)
     }
 
 
@@ -55,7 +56,7 @@ const LoginC = () => {
         if (!products.owner) {
             await set(ref(database, "products/owner"), data.user.uid)
         }
-
+        
         localStorage.setItem("uid", data.user.uid);
 
         setUid(data.user.uid);
